@@ -41,13 +41,49 @@ exports.init = function (cb) {
 //You can now access all carton modules. 
 //This function is not required.
 exports.setup = function (cb) {
-    console.log('I am called after all other modules have been setup.');
+    console.log('I am called after all other modules have been intialized.');
     cb();
 };
 
 exports.beans = function () {
     console.log('Okey Dokey Artichoke');
 };
+
+```
+
+##Configuration files
+Although Carton is designed to provide as little functionality out of the box as possible, it has one module to load configuration files. Configuration files should be valid JSON. Let's say that this is your configuration file:
+
+```
+{
+	"foo": "bar",
+	"nested": {
+		"objects": {
+			"are": {
+				"cool": "too"
+			}
+		}
+	},
+	"array": [
+		"this", "is", "an", "array"
+	]
+}
+```
+Then you can access your configuration files like this;
+
+```javascript
+var assert = require('assert');
+var carton = require('carton');
+carton.cfg.load('/location/to/your/file.json');
+
+var nestedObjects = carton.cfg.get('nested.objects');
+assert.equals(nestedObjects.are.cool, 'too');
+
+var arr = carton.cfg.get('arrays');
+assert.equals(arr.length, 4);
+
+var foo = carton.cfg.get('foo');
+assert.equals(foo, 'bar');
 
 ```
 
