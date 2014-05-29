@@ -28,13 +28,18 @@ Inside of `coolModule.js`
 ```javascript
 //Your module needs to have a name for Carton to recognize it.
 exports.name = 'cool';
-//Carton first calls all init functions. You should not use modules loaded with Carton at this point. This function is not required.
+
+//Carton first calls all init functions. 
+//You should not use modules loaded with Carton at this point. 
+//This function is not required.
 exports.init = function (cb) {
     console.log('I am called first!');
     cb();
 };
 
-//Carton call setup once all modules have been initialized. You can now access all carton modules. This function is not required.
+//Carton call setup once all modules have been initialized.
+//You can now access all carton modules. 
+//This function is not required.
 exports.setup = function (cb) {
     console.log('I am called after all other modules have been setup.');
     cb();
