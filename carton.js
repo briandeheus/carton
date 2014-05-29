@@ -3,6 +3,8 @@ var async = require('async');
 var setupFunctions = [];
 var initFunctions  = [];
 
+exports.cfg = require('./cfg');
+
 exports.add = function (module) {
 
 	if (!module.name) {
@@ -15,6 +17,10 @@ exports.add = function (module) {
 
 	if (module.name === 'setup') {
 		throw new Error('Module name "setup" is a reserved name');
+	}
+
+	if (module.name === 'cfg') {
+		throw new Error('Module name "cfg" is a reserved name');
 	}
 
 	if (exports[module.name]) {
@@ -54,3 +60,4 @@ exports.setup = function (cb) {
 	});
 
 }
+

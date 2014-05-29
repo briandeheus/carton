@@ -40,7 +40,58 @@ describe('Loading an invalid module', function () {
 		assert(error);
 		
 	});
-
 	
+});
+
+describe('Loading a configuration file', function () {
+
+	it('Can load a configuration file', function () {
+
+		carton.cfg.load(__dirname + '/config.json');
+
+	});
+
+	it('Loads a value from the configuration', function () {
+
+		var value = carton.cfg.get('foo');
+		assert.equal(value, 'bar');
+
+	});
+
+	it('Loads a deeper value from the configuration', function () {
+
+		var value = carton.cfg.get('this.goes.quite');
+		assert.equal(value, 'deep');
+
+	});
+
+	it('Loads a less deeper value to get an object', function () {
+
+		var value = carton.cfg.get('this.goes');
+		assert.equal(value.quite, 'deep');
+
+	});
+
+	it('Loads an array', function () {
+
+		var value = carton.cfg.get('arrays');
+		assert.equal(value.length, 5);
+
+	});
+
+	it('Gracefully fails when looking up a non existing value', function () {
+
+		var error;
+
+		try {
+			var value = carton.cfg.get('non.existing.value');
+		} catch (e) {
+			error = e;
+		}
+
+		assert(error);
+
+	});
+
 });
 

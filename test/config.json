@@ -1,0 +1,11 @@
+{
+	"foo": "bar",
+	"this": {
+		"goes": {
+			"quite": "deep"
+		}
+	},
+	"arrays": [
+		"should", "be", "no", "problem", "either"
+	]
+}
