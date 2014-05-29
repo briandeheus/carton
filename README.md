@@ -50,3 +50,6 @@ exports.beans = function () {
 };
 
 ```
+
+##Testing
+Run `make test` and watch the magic happen.
