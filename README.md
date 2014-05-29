@@ -1,7 +1,7 @@
 Carton
 =========
 
-Manage your library files throughout your codebase without worrying about anything.
+Manage your library files throughout your codebase without worrying about anything except maybe some trivial things like making sure your code works.
 
 ##Example
 
