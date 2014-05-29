@@ -1,0 +1,27 @@
+{
+	"name": "carton",
+	"description": "Storage for your dependencies",
+	"version": "1.0.0",
+	"keywords": ["dependencies", "container"],
+	"homepage": "https://github.com/briandeheus/carton",
+	"bugs": "https://github.com/briandeheus/carton/issues",
+	"license": "MIT",
+	"contributors":[
+	{
+		"name": "Brian de Heus",
+		"url": "http://twitter.com/briandesu"
+	}
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/carton/carton.git"
+	},
+	"dependencies": {
+		"async": "0.2.9",
+	},
+	"devDependencies": {
+		"mocha": "1.17.1",
+	},
+	"engine": "node >= 0.6.1",
+	"main": "carton.js"
+}
