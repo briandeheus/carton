@@ -4,7 +4,8 @@ var setupFunctions = [];
 var initFunctions  = [];
 
 //Always load the configuration module.
-exports.cfg = require('./cfg');
+exports.cfg    = require('./cfg');
+exports.appDir = '';
 
 exports.add = function (module) {
 
@@ -69,3 +70,6 @@ exports.setup = function (cb) {
 
 }
 
+exports.setAppDir = function (dir) {
+	exports.appDir = dir;
+};

@@ -86,6 +86,11 @@ var foo = carton.cfg.get('foo');
 assert.equals(foo, 'bar');
 
 ```
+##Appplication directory
+Carton has a way to set the app directory so that you can access it via `carton.appDir`.
+```
+carton.setAppDir('/var/www/carton');
+```
 
 ##Testing
 Run `make test` and watch the magic happen.

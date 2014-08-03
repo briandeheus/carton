@@ -23,6 +23,13 @@ describe('Loading a valid module', function () {
 		assert(carton.valid.beenSetup);
 	});
 
+	it('Sets the appdir', function () {
+
+		carton.setAppDir('/var/www/carton');
+		assert.equal(carton.appDir, '/var/www/carton');
+
+	});
+
 });
 
 describe('Loading an invalid module', function () {
