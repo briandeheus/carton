@@ -19,7 +19,7 @@ exports.load = function (file) {
 exports.get = function (key) {
 
 	//Give the entire object if key is null.
-	if (key === null) {
+	if (key === undefined) {
 		return config;
 	}
 
