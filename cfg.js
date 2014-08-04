@@ -18,6 +18,11 @@ exports.load = function (file) {
 
 exports.get = function (key) {
 
+	//Give the entire object if key is null.
+	if (key === null) {
+		return config;
+	}
+
 	//Split the key by dot, because it takes dot notation
 	var keys = key.split('.');
 
@@ -30,7 +35,7 @@ exports.get = function (key) {
 
 		//Throw an error if we run into anything undefined.
 		if (cfgv === undefined) {
-			throw new Error('Configuration value could not be found');
+			throw new Error('Configuration value could not be found:', key);
 		}
 
 	});
