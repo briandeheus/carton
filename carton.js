@@ -44,7 +44,7 @@ exports.add = function (module) {
 	//Finally expose it by it's name.
 	exports[module.name] = module;
 
-}
+};
 
 exports.setup = function (cb) {
 
@@ -68,7 +68,7 @@ exports.setup = function (cb) {
 
 	});
 
-}
+};
 
 exports.setAppDir = function (dir) {
 	exports.appDir = dir;

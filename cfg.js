@@ -4,17 +4,17 @@ var config = {};
 exports.load = function (file) {
 
 	//Read as UTF8 so we don't get a buffer. readFileSync because async. doesn't make sense here.
-	var cfg = fs.readFileSync(file, { encoding: 'utf8'});
+    var cfg;
 
 	try {
-		cfg = JSON.parse(cfg);
+		cfg = JSON.parse(fs.readFileSync(file, { encoding: 'utf8'}));
 	} catch (e) {
-		throw new Error('Invalid configuration file. Not properly formatted? Error:' + e.message);
+		throw new Error('Invalid configuration file. Not existing or properly formatted? Error:' + e.message);
 	}
 
 	config = cfg;
 
-}
+};
 
 exports.get = function (key) {
 
